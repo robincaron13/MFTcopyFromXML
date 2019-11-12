@@ -1,0 +1,105 @@
+<? xml version="1.0" ?>
+<fileStructure>
+    <Main_Package>
+        File_Navigate
+    </Main_Package>
+    <Dependency_Details>
+        
+        <Dependency>
+            <Package>
+                xmlMetadata
+            </Package>
+            <Header>
+                xmlMetadata.h
+            </Header>
+            <Header_path>
+                C:\Dependency\xmlMetadata\xmlMetadata.h
+            </Header_path>
+            <Implementation>
+                xmlMetadata.cpp
+            </Implementation>
+            <Implementation_path>
+                C:\Dependency\xmlMetadata\xmlMetadata.cpp
+            </Implementation_path>
+        </Dependency>
+        
+        <Dependency>
+            <Package>
+                xmlMetadata1
+            </Package>
+            <Header>
+                xmlMetadata1.h
+            </Header>
+            <Header_path>
+                C:\Dependency\xmlMetadata\xmlMetadata1.h
+            </Header_path>
+            <Implementation>
+                xmlMetadata1.cpp
+            </Implementation>
+            <Implementation_path>
+                C:\Dependency\xmlMetadata\xmlMetadata1.cpp
+            </Implementation_path>
+        </Dependency>
+        
+    </Dependency_Details>
+</fileStructure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,119 @@
+################# run MFT Ladder Qualification Test Bench   ######################
+
+
+# run options
+Run options:
+# grid, local, train
+# when grid is chosen the GRID datafiles are configured in GRIDrealdata.txt or GRIDMCdata.txt if MC is chosen
+# when local is chosen the datafiles are taken from filelist.txt or filelist_mc.txt
+local
+# real, MC
+real
+
+
+
+# SW versions, only valid id grid
+#AliPhysicsVersion: vAN-20161109-1
+AliPhysicsVersion: vAN-20190325-1
+
+
+
+# tasks to incorporate
+# only valid if not in train execution scope
+Use Tender: no
+Use CDB: no
+Use PhysicsSelection: no
+Use PIDResponse: no
+Use PIDCombinedTask: no
+Use CentralityTask: no
+Use MultiplicityTask: no
+
+
+
+# Execution conditions
+Use multiplicity: yes
+Is 2015 dataset: yes
+Use ESD: no
+Use AOD: yes
+
+
+
+Task level:
+# We put here the event selection criteria
+Centrality: 00-90
+zvertex: -10.0:10.0
+# Select only events validated for centrality calibration
+# Check information about your runs of interest in
+# https://twiki.cern.ch/twiki/bin/viewauth/ALICE/AliMultSelectionCalibStatus
+# Learn more about its usage in
+# https://twiki.cern.ch/twiki/bin/viewauth/ALICE/CentralityCodeSnippets
+Use OnlyCentCalibEvents: no
+end
+
+
+
+Detectors:
+# detectors to use
+Use TPC: no
+Use SPD: yes
+Use VZERO: yes
+Use TZERO: yes
+Use FMD: no
+Use rawFMD: no
+Use ZDC: yes
+
+
+
+# the corrections file
+Corrections file:
+# source: local, aliensingle, alienmultiple, OADBsingle, OADBmultiple
+# single: one file contains on a per run basis the calibration parameters for the whole runs set
+# multiple: each run has its own calibration parameters file; in this case the filename is built as filename = name.root -> actual filename = name_runno.root
+# source: local
+# path: .
+# filename: CalibrationHistograms.root
+# source: alien
+# path: alien:///alice/cern.ch/user/v/victor/TESTS
+# filename: QnVectorCorrectionsHistograms.root
+
+#source: local
+source: alienmultiple
+
+#path: /Users/jcastill/pbpb15wrk/jpsiv2/jpsiv2aod175/outputP0am/
+
+
+
+#path: alien:///alice/cern.ch/user/j/jcastill/pbpb15wrk/jpsiv2/jpsiv2aod175/outputP3am/
+#path: alien:///alice/cern.ch/user/r/rcaron/pbpb18wrk/QnCalibration/muon_calo_pass2/AOD211/18q_step4
+path: alien:///alice/cern.ch/user/r/rcaron/pbpb18wrk/QnCalibration/muon_calo_pass2/AOD211/18r_step4
+
+
+#path: alien:///alice/cern.ch/user/r/rcaron/pbpb18wrk/QnCalibration/muon_calo_pass2/AOD211/18q_smallruns_step4
+#path: alien:///alice/cern.ch/user/r/rcaron/pbpb18wrk/QnCalibration/muon_calo_pass2/AOD211/18r_smallruns_step4
+
+
+filename: CalibrationHistograms.root
+
+
+
+
+# run the Qn vector analysis task
+Use QnVectorAnalysisTask: yes
+# correction steps: raw, plain, rec, align, twist, scale, latest
+#Expected correction step: scale
+#Alternative correction step: twist
+#Expected correction step: twist
+#Alternative correction step: twist
+
+Expected correction step: twist
+Alternative correction step: align
+
+#Expected correction step: twist
+#Alternative correction step: rec
+#Expected correction step: rec
+#Alternative correction step: plain
+#Expected correction step: raw
+#Alternative correction step: plain
+
+#Expected correction step: rec
+#Alternative correction step: plain
